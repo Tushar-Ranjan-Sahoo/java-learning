@@ -1,17 +1,19 @@
+//Java Constructors
+//		A constructor in Java is a special method that is used to initialize objects. The constructor is called when an object of a class is created. It can be used to set initial values for object attributes:
+
 public class Main {
 
-	public void fullThrottle(){
-		System.out.println("the car is going as fast as it can");
+	int x;
+	public Main(){
+		x=5;
 	}
-	public void speed(int maxSpeed){
-		System.out.println("Max speed is :"+ maxSpeed);
-	}
-}
-class Second{
+
 	public static void main(String[] args) {
-		Main myCar = new Main();
-		myCar.fullThrottle();
-		myCar.speed(200);
+		Main obj = new Main();
+		System.out.println(obj.x);
 	}
+
 }
+
+
 
