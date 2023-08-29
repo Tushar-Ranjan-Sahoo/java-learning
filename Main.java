@@ -1,16 +1,17 @@
 public class Main {
-	static void myStatickMethod(){
-		System.out.println("This is static method");
 
+	public void fullThrottle(){
+		System.out.println("the car is going as fast as it can");
 	}
-	public void myPublicMethod(){
-		System.out.println("This is public method");
+	public void speed(int maxSpeed){
+		System.out.println("Max speed is :"+ maxSpeed);
 	}
-
+}
+class Second{
 	public static void main(String[] args) {
-		myStatickMethod();
-		Main obj = new Main();
-		obj.myPublicMethod();
+		Main myCar = new Main();
+		myCar.fullThrottle();
+		myCar.speed(200);
 	}
 }
 
