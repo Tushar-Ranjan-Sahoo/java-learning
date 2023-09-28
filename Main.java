@@ -1,32 +1,32 @@
 
 import java.util.*;
 public class Main {
-	public void sort(int arr[]) {
-
-		int n = arr.length;
-
-	for(int i = n-1;i>1;i--){
-		for(int j = 0;j<i-1;j++){
-			if(arr[j]>arr[j+1]) {
-				int temp = arr[j];
-				arr[j]=arr[j+1];
-				arr[j+1]=temp;
-			}
-		}
-	}
+  	public static void Reverse(int[] arr,int start, int end){
+		  while(start<= end){
+			  int temp = arr[start];
+			  arr[start]=arr[end];
+			  arr[end]=temp;
+		  }
 
 	}
-	public void printArr(int arr[]){
-		for(int i = 0 ; i<arr.length; i++){
-			System.out.print(arr[i]+" ");
-		}
+	public static void Ratateelettoleft(int[] arr,int n , int k ){
+		Reverse(arr,0,k-1);
+		Reverse(arr,k,n-1);
+		Reverse(arr,0,n-1);
 	}
 	public static void main(String[] args){
-		int[] arr  = {84,54,6,56,7,8,6,8,5,67,5,567};
-		Main ob = new Main();
-		ob.sort(arr);
-		ob.printArr(arr);
+		  int[] arr = {1,2,3,45,6,435,6,54,6,57,46,4};
+		  int n = arr.length;
+		  int k = 2;
+
+		  Ratateelettoleft(arr,n,k);
+
+		System.out.print("-===================================");
+
+		for(int i = 0 ; i<n;i++)
+			System.out.print(arr[i]+" ");
 	}
+
 }
 
 
