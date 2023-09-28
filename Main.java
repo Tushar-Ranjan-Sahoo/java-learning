@@ -1,32 +1,42 @@
 
 import java.util.*;
 public class Main {
-  	public static void Reverse(int[] arr,int start, int end){
-		  while(start<= end){
-			  int temp = arr[start];
-			  arr[start]=arr[end];
-			  arr[end]=temp;
-		  }
+	public static int[] moveZeros(int n, int []a) {
+		//temporary array:
+		ArrayList<Integer> temp = new ArrayList<>();
+		//copy non-zero elements
+		//from original -> temp array:
+		for (int i = 0; i < n; i++) {
+			if (a[i] != 0)
+				temp.add(a[i]);
+		}
 
+		// number of non-zero elements.
+		int nz = temp.size();
+
+		//copy elements from temp
+		//fill first nz fields of
+		//original array:
+		for (int i = 0; i < nz; i++) {
+			a[i] = temp.get(i);
+		}
+
+		//fill rest of the cells with 0:
+		for (int i = nz; i < n; i++) {
+			a[i] = 0;
+		}
+		return a;
 	}
-	public static void Ratateelettoleft(int[] arr,int n , int k ){
-		Reverse(arr,0,k-1);
-		Reverse(arr,k,n-1);
-		Reverse(arr,0,n-1);
+
+	public static void main(String[] args) {
+		int[] arr = {1, 0, 2, 3, 2, 0, 0, 4, 5, 1};
+		int n = 10;
+		int[] ans = moveZeros(n, arr);
+		for (int i = 0; i < n; i++) {
+			System.out.print(ans[i] + " ");
+		}
+		System.out.println("");
 	}
-	public static void main(String[] args){
-		  int[] arr = {1,2,3,45,6,435,6,54,6,57,46,4};
-		  int n = arr.length;
-		  int k = 2;
-
-		  Ratateelettoleft(arr,n,k);
-
-		System.out.print("-===================================");
-
-		for(int i = 0 ; i<n;i++)
-			System.out.print(arr[i]+" ");
-	}
-
 }
 
 
